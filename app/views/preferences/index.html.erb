@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<%= turbo_stream_from @current_user %>
+
+<%= @current_user.inspect %>
+
+<h1>Preferences</h1>
+
+<input type="text" />
+
+<%= turbo_frame_tag 'preferences' do %>
+  <%= render @preferences %>
+<% end %>
+
+<%= render 'new_preference_link' %>

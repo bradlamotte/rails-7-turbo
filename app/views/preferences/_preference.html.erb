@@ -1,0 +1,6 @@
+<%= turbo_frame_tag dom_id(preference) do %>
+  <div>
+    <%= preference.color %>
+    <%= link_to 'edit', edit_preference_path(preference) %>
+  </div>
+<% end %>

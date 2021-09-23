@@ -1,0 +1,22 @@
+<%= form_with(model: preference) do |form| %>
+  <% if preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
+
+      <ul>
+        <% preference.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :color, 'Color:' %>
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
