@@ -1,0 +1,14 @@
+<%= turbo_frame_tag 'search' do %>
+  Search
+
+  <%= form_with method: 'get' do |form| %>
+    <%= form.text_field :term, value: params[:term] %>
+    <%= form.submit 'Search' %>
+  <% end %>
+
+  <% @preferences.each do |preference| %>
+    <div>
+      <%= preference.color %>
+    </div>
+  <% end %>
+<% end %>

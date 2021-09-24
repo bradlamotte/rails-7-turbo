@@ -6,6 +6,11 @@ class PreferencesController < ApplicationController
     @preferences = current_user.preferences
   end
 
+  def search
+    puts "params #{params}"
+    @preferences = Preference.where("color like ?", "%#{params[:term]}%")
+  end
+
   # GET /preferences/1 or /preferences/1.json
   def show
   end
