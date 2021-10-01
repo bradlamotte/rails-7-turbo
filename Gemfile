@@ -6,6 +6,7 @@ ruby "3.0.0"
 gem 'dotenv-rails'
 
 gem 'bootstrap'
+gem 'bootstrap-icons-helper'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0.alpha2"

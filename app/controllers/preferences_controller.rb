@@ -7,8 +7,11 @@ class PreferencesController < ApplicationController
   end
 
   def search
-    puts "params #{params}"
-    @preferences = Preference.where("color like ?", "%#{params[:term]}%")
+    if params.has_key?(:term)
+      @preferences = Preference.where("color like ?", "%#{params[:term]}%")
+    else
+      @preferences = []
+    end
   end
 
   # GET /preferences/1 or /preferences/1.json
@@ -44,7 +47,7 @@ class PreferencesController < ApplicationController
   def update
     respond_to do |format|
       if @preference.update(preference_params)
-        format.html { redirect_to preferences_path, notice: "Preference was successfully updated." }
+        format.html { render @preference, notice: "Preference was successfully updated." }
         format.json { render :show, status: :ok, location: @preference }
       else
         format.html { render :edit, status: :unprocessable_entity }

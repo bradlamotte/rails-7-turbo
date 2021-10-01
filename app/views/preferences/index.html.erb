@@ -2,16 +2,22 @@
 
 <%= turbo_stream_from @current_user %>
 
-<%= @current_user.inspect %>
-
 <h1>Preferences</h1>
 
-<input type="text" />
+<div class="row">
+  <div class="col-md-6">
+    <%= turbo_frame_tag 'preferences' do %>
+      <%= render @preferences %>
+    <% end %>
 
-<%= turbo_frame_tag 'preferences' do %>
-  <%= render @preferences %>
-<% end %>
+    <%= render 'new_preference_link' %>
+  </div>
 
-<%= render 'new_preference_link' %>
-
-<%= turbo_frame_tag 'search', src: search_preferences_path %>
+  <div class="col-md-6">
+    <%= turbo_frame_tag 'search', src: search_preferences_path do %>
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+    <% end %>
+  </div>
+</div>

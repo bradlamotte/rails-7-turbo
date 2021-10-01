@@ -1,22 +1,17 @@
-<%= form_with(model: preference) do |form| %>
-  <% if preference.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
+<%= form_with(model: preference, html: {novalidate: true, class: 'row g-3 align-items-center needs-validation'}) do |form| %>
+  <div class="col-auto">
+    <div class="input-group has-validation">
+      <%= form.text_field :color, required: true, class: 'form-control' %>
 
-      <ul>
-        <% preference.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <% if preference.errors.any? %>
+        <div class="invalid-feedback">
+          <%= preference.errors.full_messages.join %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.label :color, 'Color:' %>
-    <%= form.text_field :color %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-auto">
+    <%= form.submit class: 'btn btn-sm btn-primary' %>
   </div>
 <% end %>

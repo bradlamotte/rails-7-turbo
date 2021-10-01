@@ -13,8 +13,17 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
 
-turbo-frame {
+// turbo-frame {
+//   display: block;
+//   border: 1px solid blue;
+// }
+
+#preferences turbo-frame{
+  height: 33px;
+}
+
+.invalid-feedback{
   display: block;
-  border: 1px solid blue;
 }

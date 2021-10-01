@@ -1,9 +1,11 @@
 <%= turbo_frame_tag 'search' do %>
-  Search
-
-  <%= form_with method: 'get' do |form| %>
-    <%= form.text_field :term, value: params[:term] %>
-    <%= form.submit 'Search' %>
+  <%= form_with method: 'get', class: 'row g-3 align-items-center' do |form| %>
+    <div class="col-auto">
+      <%= form.text_field :term, value: params[:term], class: 'form-control' %>
+    </div>
+    <div class="col-auto">
+      <%= form.submit 'Search', class: 'btn btn-primary' %>
+    </div>
   <% end %>
 
   <% @preferences.each do |preference| %>
