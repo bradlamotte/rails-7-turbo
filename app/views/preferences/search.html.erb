@@ -9,7 +9,7 @@
   <% end %>
 
   <% @preferences.each do |preference| %>
-    <div>
+    <div data-action="click->colors#choose">
       <%= preference.color %>
     </div>
   <% end %>

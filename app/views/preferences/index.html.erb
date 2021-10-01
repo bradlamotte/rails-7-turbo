@@ -14,10 +14,16 @@
   </div>
 
   <div class="col-md-6">
-    <%= turbo_frame_tag 'search', src: search_preferences_path do %>
-      <div class="spinner-border" role="status">
-        <span class="sr-only"></span>
-      </div>
-    <% end %>
+    <div data-controller="colors">
+
+      <div data-colors-target="choice"></div>
+
+      <%= turbo_frame_tag 'search', src: search_preferences_path do %>
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <% end %>
+
+    </div>
   </div>
 </div>

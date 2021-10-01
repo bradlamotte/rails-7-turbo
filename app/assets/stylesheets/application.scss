@@ -27,3 +27,12 @@
 .invalid-feedback{
   display: block;
 }
+
+[data-colors-target="choice"]{
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+[data-action="click->colors#choose"]{
+  cursor: pointer;
+}
